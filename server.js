@@ -18,13 +18,13 @@ app.set('view engine', 'ejs');
 
 const PORT = process.env.PORT || 3030;
 
-// const client ;
+let client = '' ;
 
-// if(PORT == 3000 || PORT == 3030){
-    const client = new pg.Client(process.env.DATABASE_URL);
-// } else {
-//  client = new pg.Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
-// }
+if(PORT == 3000 || PORT == 3030){
+ client = new pg.Client(process.env.DATABASE_URL);
+} else {
+ client = new pg.Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+}
 
 
 // routes
