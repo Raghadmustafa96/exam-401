@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header> <p> 
+        <a href="/">Home</a>
+        <a href="/allCountries">All Countries</a>
+        <a href="/Records">My Records</a>
+        <link rel="stylesheet" href="/style.css">
+    </p></header>
+    <main>
+      <div>
+          <% data.forEach(element=>{%> 
+            <p>Country: <%= element.country  %> </p>
+            <p>TotalConfirmed: <%= element.totalconfirmed  %> </p>
+            <p>TotalDeaths: <%= element.totaldeaths  %> </p>
+            <p>TotalRecovered: <%= element.totalrecovered  %> </p>
+            <p>Date: <%= element.date  %> </p>
+
+             <form action="/details/<%=element.id %>" method="GET">
+                 <button>details </button>
+            </form>
+
+
+            <% }) %> 
+      </div>
+    </main>
+</body>
+</html>
